@@ -27,9 +27,9 @@
 
         <div class="menu">
             <ul>
-                <a href="#"><li>Notifications</li></a>
-                <a href="#"><li>Calendar</li></a>
-                <a href="#"><li>Vacation Days</li></a>
+                <a href="IU_NotificationScreen.jsp"><li>Notifications</li></a>
+                <a href="IU_Calendar.jsp"><li>Calendar</li></a>  
+                <a href="IU_VacationDays.jsp"><li>Vacation Days</li></a> 
 
             </ul>
         </div>

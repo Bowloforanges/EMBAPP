@@ -27,13 +27,13 @@
 
         <div class="menu">
             <ul>
-                <a href="#"><li>Notifications</li></a>
-                <a href="#"><li>Calendar</li></a>
-                <a href="#"><li>Vacation Days</li></a>
-                <a href="#"><li>Brackets</li></a>
-                <a href="#"><li>Score</li></a>
-                <a href="#"><li>Annual Feedback</li></a>
-                <a href="#"><li>Trimestral Feedback</li></a>
+                <a href="IU_NotificationScreen.jsp"><li>Notifications</li></a>
+                <a href="IU_Calendar.jsp"><li>Calendar</li></a>
+                <a href="IU_VacationDays.jsp"><li>Vacation Days</li></a>
+                <a href="IU_E_Brackets.jsp"><li>Brackets</li></a>
+                <a href="IU_E_Score.jsp"><li>Score</li></a>
+                <a href="IU_E_AnnualFeedback.jsp"><li>Annual Feedback</li></a>
+                <a href="IU_E_TriFeedback.jsp"><li>Trimestral Feedback</li></a>
             </ul>
         </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
