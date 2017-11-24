@@ -30,6 +30,7 @@
                 <a href="IU_NotificationScreen.jsp"><li>Notifications</li></a>
                 <a href="IU_Calendar.jsp"><li>Calendar</li></a>  
                 <a href="IU_VacationDays.jsp"><li>Vacation Days</li></a> 
+                <a href="IU_Employees.jsp"><li>Employees</li></a> 
 
             </ul>
         </div>

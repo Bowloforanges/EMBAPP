@@ -1,0 +1,42 @@
+body {
+  background-color: #dddddd;
+}
+
+.container {
+  position: relative;
+  max-width: 650px;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+
+.comment {
+  background-color: blue;
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+.commenter {
+  float: left;
+}
+
+.commenter img {
+  width: 35px;
+  height: 35px;
+}
+
+.comment-text-area {
+  float: left;
+  width:100%;
+  height: auto;
+  background-color: red;
+}
+
+.textinput {
+  float:left;
+  width: 100%;
+  min-height: 35px;
+  outline: none;
+  resize: none;
+  border: 1px solid #f0f0f0;
+}
