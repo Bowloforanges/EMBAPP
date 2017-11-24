@@ -22,19 +22,19 @@
             Statement stmt = null;
             try {
 
-                String url = "jdbc:mysql://localhost:3306/examen";
+                String url = "jdbc:mysql://localhost:3306/embagroup";
 
                 String user = "root";
                 String password = "1234";
                 con = DriverManager.getConnection(url, user, password);
                 stmt = con.createStatement();
-                String LoginName=request.getParameter("nm");
-                String LoginPass=request.getParameter("pw");
-                rst = stmt.executeQuery("SELECT * FROM examen.users; ");
+                String ValidateLogin_LoginID=request.getParameter("nm");
+                String ValidateLogin_LoginPass=request.getParameter("pw");
+                rst = stmt.executeQuery("SELECT * FROM embagroup.contra_emp; ");
                 
                 while (rst.next()) {
                        
-                    if((rst.getString("Name").equals(LoginName) && rst.getString("Password").equals(LoginPass))){
+                    if((rst.getString("ID_E").equals(ValidateLogin_LoginID) && rst.getString("Password").equals(ValidateLogin_LoginPass))){
                         //out.println(rst.getString("Name"));
                          response.sendRedirect("IU_PP_Empleado.jsp");
                         
@@ -42,7 +42,7 @@
                 }
                 
                 
-                response.sendRedirect("Login.jsp");
+                response.sendRedirect("IU_Login.jsp");
                 //out.println(rst.getString("Name"));
 
                 rst.close();
