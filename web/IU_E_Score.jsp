@@ -1,17 +1,22 @@
-<%-- 
-    Document   : IU_E_Score
-    Created on : 24/11/2017, 02:28:23 PM
-    Author     : UAA
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+       <link href="css/circularp_bar.css" media="all" rel="stylesheet" />
+       <link href="css/responsiveheadings.css" media="all" rel="stylesheet" />
     </head>
     <body>
-        <h1>Hello World!</h1>
+        
+        <h1 class="h2-xs">8.6</h1>
+        
+        <!--<p>Test Page</p>
+        <div class="centerino">
+        <div class="progress-circle over50 p66">
+            <span>66%</span>
+            <div class="left-half-clipper">
+                <div class="first50-bar"></div>
+                <div class="value-bar"></div>
+            </div>
+        </div>
+        </div>-->
+        
     </body>
 </html>
