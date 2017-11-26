@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* http://techneblog.com/article/creating-responsive-multiple-column-list */
+h1{
+    font-size: 1.5em; /* 25px/16px */
+}
+#content       
+{
+    font-size: .75em; /* 12/16 */
+    width:  71.875%; /* 650/960 */
+    max-width: 960px;
+    text-align: left;
+    margin: 0px auto; /*auto centers the container */
+    padding: 3.84615384615385%;  /* 25/650 */
+
+}
+#BOX{
+
+
+
+}
+/*CSS3 multiple columns.*/
+/* Get em size for colums: 184/16 */   
+.columns
+{   
+    -moz-column-width: 11.5em; /* Firefox */
+    -webkit-column-width: 11.5em; /* webkit, Safari, Chrome */
+    column-width: 11.5em;
+}
+/*remove standard list and bullet formatting from ul*/
+.columns ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+/* correct webkit/chrome uneven margin on the first column*/
+.columns ul li:first-child
+{
+    margin-top:0px;
+}
+
+
+.line-separator{
+
+    height:1px;
+
+    background:#717171;
+
+    border-bottom:1px solid #313030;
+
+}
+.Bracket:hover{
+    background-color:#ededed;
+}
+.Bracket{
+    background-color:#ffffff;
+    -o-transition:color .2s ease-out, background .2s ease-in;
+    -ms-transition:color .2s ease-out, background .2s ease-in;
+    -moz-transition:color .2s ease-out, background .2s ease-in;
+    -webkit-transition:color .2s ease-out, background .2s ease-in;
+    /* ...and now override with proper CSS property */
+    transition:color .2s ease-out, background .1s ease-in;
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    margin:0;
+    width:100%;
+    height:100vh;
+    background:#ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
