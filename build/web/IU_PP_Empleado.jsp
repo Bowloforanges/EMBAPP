@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>EMBA</title>
+        <title>EMBAGROUP</title>
 
 
         <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Noto+Sans:700'>
@@ -20,7 +20,7 @@
                 <img src="assets/images/embalogo-150x150.png" alt="" title="" media-simple="true" style="height: 2.7rem;">
                 </a>
             </span>
-            <span class="TitleEMBA">EMBA</span>
+            <span class="TitleEMBA">EMBAGROUP</span>
             <button class="hamburger">&#9776;</button>
             <button class="cross">&#735;</button>
         </header>

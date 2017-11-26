@@ -23,7 +23,7 @@
     </head>
     <body>
         <div class="bs-example">
-            <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/><br><br>
+            <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/><br>
             <hr>
             <div class="alert alert-danger fade in">
 
