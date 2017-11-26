@@ -17,7 +17,7 @@
         <header>
             <span class="navbar-logo">
                 <a>
-                <img src="assets/images/emba-logo.png" alt="" title="" media-simple="true" style="height: 2.7rem;">
+                <img src="assets/images/embalogo-150x150.png" alt="" title="" media-simple="true" style="height: 2.7rem;">
                 </a>
             </span>
             <span class="TitleEMBA">EMBA</span>
