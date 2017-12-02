@@ -43,19 +43,23 @@ public class CTL_ACTUALIZAR_BD extends HttpServlet {
         response.setContentType("text/html");
 		
          try {
-               PrintWriter out=response.getWriter();
-                int Id       = parseInt(request.getParameter("ID_E"));
-		String name     =request.getParameter("Nombre");
-		String password =request.getParameter("password");
-		String puesto    =request.getParameter("Puesto");
-		String Fecha_ingreso  =request.getParameter("Fecha_ingreso");
-		
-		Informacion_del_Empleado e=new Informacion_del_Empleado();
+               PrintWriter out = response.getWriter();
+                int Id = parseInt(request.getParameter("ID_E"));
+		String name = request.getParameter("Nombre");
+		String password = request.getParameter("Password");
+		String puesto = request.getParameter("Position");
+		int Age = parseInt(request.getParameter("Age"));
+                String Gender = request.getParameter("Gender");
+                String Fecha_ingreso = request.getParameter("Admission_Date");
+                
+		Informacion_del_Empleado e = new Informacion_del_Empleado();
                 e.setId(Id);
 		e.setName(name);
 		e.setPassword(password);
 		e.setPuesto(puesto);
-		e.setFecha(Fecha_ingreso);
+                e.setAge(Age);
+                e.setGender(Gender);
+                e.setFecha(Fecha_ingreso);
 		
 		int status=CTL_CRUD.save(e);
 		if(status>0){

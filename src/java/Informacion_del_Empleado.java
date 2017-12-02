@@ -1,11 +1,17 @@
 public class Informacion_del_Empleado {
-private int ID_E;
-private String name,password,Puesto,Fecha_ingreso;
+private int ID_E,age;
+private String name,password,Puesto,Fecha_ingreso,gender,score,exp_total,bracket_emp,cumplimiento;
 public int getId() {
 	return ID_E;
 }
 public void setId(int ID_E) {
 	this.ID_E = ID_E;
+}
+public int getAge() {
+	return age;
+}
+public void setAge(int age) {
+	this.age = age;
 }
 public String getName() {
 	return name;
@@ -13,6 +19,37 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
+public String getBracketName() {
+	return bracket_emp;
+}
+public void setBracketName(String bracket_emp) {
+	this.bracket_emp = bracket_emp;
+}
+public String getCumplimiento() {
+	return cumplimiento;
+}
+public void setCumplimiento(String cumplimiento) {
+	this.cumplimiento = cumplimiento;
+}
+public String getGender() {
+	return gender;
+}
+public void setGender(String gender) {
+	this.gender = gender;
+}
+public String getScore() {
+	return score;
+}
+public void setScore(String score) {
+	this.score = score;
+}
+public String getExp() {
+	return exp_total;
+}
+public void setExp(String exp_total) {
+	this.exp_total = exp_total;
+}
+
 public String getPassword() {
 	return password;
 }
