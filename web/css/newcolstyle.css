@@ -72,22 +72,22 @@ body{
 }
 
 .btn {
-  -webkit-border-radius: 6;
-  -moz-border-radius: 6;
-  border-radius: 6px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 15px;
-  background: #d6d6d6;
-  padding: 10
-      px 20px 10px 20px;
-  text-decoration: none;
-  
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    background: #d6d6d6;
+    padding: 10
+        px 20px 10px 20px;
+    text-decoration: none;
+
 }
 
 .btn:hover {
-  background: #dbdbdb;
-  text-decoration: none;
+    background: #dbdbdb;
+    text-decoration: none;
 }
 
 .buttondiv{
@@ -97,10 +97,13 @@ body{
 
 h1{
     font-family: 'Nunito', sans-serif;
-    
+
 }
 .separatepls{
     padding-left: 60px;
     padding-right: 60px;
-    
+
 }
+
+
+

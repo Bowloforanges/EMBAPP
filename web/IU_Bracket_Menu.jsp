@@ -29,13 +29,13 @@
 
             try {
 
-                String url = "jdbc:mysql://localhost:3306/embagroup";
+                String url = "jdbc:mysql://localhost:3306/test";
 
                 String user = "root";
                 String password = "1234";
                 con = DriverManager.getConnection(url, user, password);
                 stmnt = con.createStatement();
-                rs = stmnt.executeQuery("SELECT * FROM embagroup.brackets; ");
+                rs = stmnt.executeQuery("select * from test.brackets natural join test.bracket_desc where brackets.Bracket_Name = bracket_desc.Bracket_Name; ");
                 //usr = stmt2.executeQuery("SELECT * FROM embagroup.info_empleado; ");
 
                 while (rs.next()) {
@@ -47,11 +47,11 @@
         <div class="line-separator"></div>
         <div id="BOX" class="Bracket">
             <div id="content" >
-                <h1>Bracket ID: <%=rs.getInt("ID_Bracket")%></h1>
+                <h1>Bracket Name: <%=rs.getString(1)%></h1>
                 <div class="columns">
                     <ul>
-                        <li>Name: <%=rs.getString(2)%></li>
-                        <li>Experience: <%=rs.getInt("Exp")%></li>
+                        <li>Description: <%=rs.getString(4)%></li>
+                        <li>Experience per Bracket: <%=rs.getInt("Bracket_Exp")%></li>
                     </ul>         
                 </div>
             </div>
