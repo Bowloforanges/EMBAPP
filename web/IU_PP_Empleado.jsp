@@ -14,10 +14,16 @@
     </head>
 
     <body>
+
+        <%
+            String sid = request.getParameter("sid");
+            int id = Integer.parseInt(sid);
+        %>
+
         <header>
             <span class="navbar-logo">
                 <a>
-                <img src="assets/images/embalogo-150x150.png" alt="" title="" media-simple="true" style="height: 2.7rem;">
+                    <img src="assets/images/embalogo-150x150.png" alt="" title="" media-simple="true" style="height: 2.7rem;">
                 </a>
             </span>
             <span class="TitleEMBA">EMBAGROUP</span>
@@ -30,10 +36,10 @@
                 <a href="IU_NotificationScreen.jsp"><li>Notifications</li></a>
                 <a href="IU_Calendar.jsp"><li>Calendar</li></a>
                 <a href="IU_VacationDays.jsp"><li>Vacation Days</li></a>
-                <a href="IU_E_Brackets.jsp"><li>Brackets</li></a>
-                <a href="IU_E_Score.jsp"><li>Score</li></a>
-                <a href="IU_E_AnnualFeedback.jsp"><li>Annual Feedback</li></a>
-                <a href="IU_E_TriFeedback.jsp"><li>Trimestral Feedback</li></a>
+                <a href=<%= "\"IU_E_Brackets.jsp?sid=" + sid + "\""%>><li>Brackets</li></a>
+                <a href=<%= "\"IU_E_Score.jsp?sid=" + sid + "\""%>><li>Score</li></a>
+                <a href=<%= "\"IU_E_AnnualFeedback.jsp?sid=" + sid + "\""%>> <li>Annual Feedback</li></a>
+                <a href=<%= "\"IU_E_TriFeedback.jsp?sid=" + sid + "\""%>><li>Trimestral Feedback</li></a>
             </ul>
         </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

@@ -14,6 +14,12 @@
     </head>
 
     <body>
+        
+        <%
+            String sid = request.getParameter("sid");
+            int id = Integer.parseInt(sid);
+        %>
+        
         <header>
             <span class="navbar-logo">
                 <a>
@@ -29,8 +35,8 @@
             <ul>
                 <a href="IU_NotificationScreen.jsp"><li>Notifications</li></a>
                 <a href="IU_Calendar.jsp"><li>Calendar</li></a>  
-                <a href="IU_VacationDays.jsp"><li>Vacation Days</li></a> 
-                <a href="IU_Employees.jsp"><li>Employees</li></a> 
+                <a href=<%= "\"IU_VacationDays.jsp?sid=" + sid + "\""%>><li>Vacation Days</li></a> 
+                <a href=<%= "\"IU_Employees.jsp?sid=" + sid + "\""%>><li>Employees</li></a> 
 
             </ul>
         </div>

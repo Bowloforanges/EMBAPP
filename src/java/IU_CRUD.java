@@ -47,6 +47,7 @@ public class IU_CRUD extends HttpServlet {
                     + "    <tr>\n"
                     + "      <th scope=\"col\">ID</th>\n"
                     + "      <th scope=\"col\">Name</th>\n"
+                    + "      <th scope=\"col\">Last Name</th>\n"
                     + "      <th scope=\"col\">Password</th>\n"
                     + "      <th scope=\"col\">Position</th>\n"
                     + "      <th scope=\"col\">Admission Date</th>\n"
@@ -56,7 +57,7 @@ public class IU_CRUD extends HttpServlet {
                     + "  </thead>\n"
                     + "  <tbody>");
             for (Informacion_del_Empleado e : list) {
-                out.print("<tr><td>" + e.getId() + "</td><td>" + e.getName() + "</td><td>" + e.getPassword() + "</td><td>" + e.getPuesto() + "</td><td>" + e.getFecha() + "</td><td><a href='IU_CRUD_UPDATE?ID_E=" + e.getId() + "'>edit</a></td><td><a href='CTL_CRUD_DELETE?ID_E=" + e.getId() + "'>delete</a></td></tr></tbody>");
+                out.print("<tr><td>" + e.getId() + "</td><td>" + e.getName()+"</td><td>" + e.getLast_Name()+ "</td><td>" + e.getPassword() + "</td><td>" + e.getPuesto() + "</td><td>" + e.getFecha() + "</td><td><a href='IU_CRUD_UPDATE?ID_E=" + e.getId() + "'>edit</a></td><td><a href='CTL_CRUD_DELETE?ID_E=" + e.getId() + "'>delete</a></td></tr></tbody>");
             }
             out.print("</table>");
 

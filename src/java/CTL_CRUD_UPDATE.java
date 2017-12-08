@@ -29,6 +29,7 @@ public class CTL_CRUD_UPDATE extends HttpServlet {
 		String sid=request.getParameter("ID_E");
 		int id=Integer.parseInt(sid);
 		String name=request.getParameter("Nombre");
+                String last=request.getParameter("Apellido");
 		String password=request.getParameter("password");
 		String Puesto=request.getParameter("Puesto");
 		String Fecha_ingreso=request.getParameter("Fecha_ingreso");
@@ -36,6 +37,7 @@ public class CTL_CRUD_UPDATE extends HttpServlet {
 		Informacion_del_Empleado e=new Informacion_del_Empleado();
 		e.setId(id);
 		e.setName(name);
+                e.setLast_Name(last);
 		e.setPassword(password);
 		e.setPuesto(Puesto);
 		e.setFecha(Fecha_ingreso);

@@ -20,16 +20,6 @@ public class CTL_CRUD {
         try {
             Connection con = CTL_CRUD.getConnection();
 
-            PreparedStatement ps = con.prepareStatement("insert into test.vdays_admdate (Emp_Admission_Date, VDAD_Vac_Days) values (?,10)");
-            ps.setString(1, e.getFecha());
-            status = ps.executeUpdate();
-            con.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        try {
-            Connection con = CTL_CRUD.getConnection();
-
             PreparedStatement ps = con.prepareStatement("insert into test.level_exp (Emp_Tot_Exp, Level_Exp_Current_Level) values (?,9)");
             ps.setString(1, e.getExp());
             status = ps.executeUpdate();
@@ -40,14 +30,15 @@ public class CTL_CRUD {
         try {
             Connection con = CTL_CRUD.getConnection();
 
-            PreparedStatement ps = con.prepareStatement("insert into test.employee (Emp_ID,Emp_Name,Emp_Password,Emp_Age,Emp_Gender,Emp_Position,Emp_Admission_Date) values (?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("insert into test.employee (Emp_ID, Emp_Name, Emp_LastName, Emp_Password, Emp_Age, Emp_Gender, Emp_Position, Emp_Admission_Date ) values (?,?,?,?,?,?,?,?)");
             ps.setInt(1, e.getId());
             ps.setString(2, e.getName());
-            ps.setString(3, e.getPassword());
-            ps.setInt(4, e.getAge());
-            ps.setString(5, e.getGender());
-            ps.setString(6, e.getPuesto());
-            ps.setString(7, e.getFecha());
+            ps.setString(3, e.getLast_Name());
+            ps.setString(4, e.getPassword());
+            ps.setInt(5, e.getAge());
+            ps.setString(6, e.getGender());
+            ps.setString(7, e.getPuesto());
+            ps.setString(8, e.getFecha());
             status = ps.executeUpdate();
             con.close();
         } catch (SQLException ex) {
@@ -61,12 +52,13 @@ public class CTL_CRUD {
         try {
             
             Connection con = CTL_CRUD.getConnection();
-            PreparedStatement ps = con.prepareStatement("update employee set Emp_Name=?, Emp_Password=?,Emp_Position=?,Emp_Admission_Date=? where Emp_ID=?");
+            PreparedStatement ps = con.prepareStatement("update employee set Emp_Name=?, Emp_LastName=?, Emp_Password=?,Emp_Position=?,Emp_Admission_Date=? where Emp_ID=?");
             ps.setString(1, e.getName());
-            ps.setString(2, e.getPassword());
-            ps.setString(3, e.getPuesto());
-            ps.setString(4, e.getFecha());
-            ps.setInt(5, e.getId());
+            ps.setString(2, e.getLast_Name());
+            ps.setString(3, e.getPassword());
+            ps.setString(4, e.getPuesto());
+            ps.setString(5, e.getFecha());
+            ps.setInt(6, e.getId());
 
             status = ps.executeUpdate();
 
@@ -109,15 +101,16 @@ public class CTL_CRUD {
 
         try {
             Connection con = CTL_CRUD.getConnection();
-            PreparedStatement ps = con.prepareStatement("select Emp_ID,Emp_Name,Emp_Password,Emp_Position,Emp_Admission_Date from employee where Emp_ID=?");
+            PreparedStatement ps = con.prepareStatement("select Emp_ID,Emp_Name,Emp_LastName,Emp_Password,Emp_Position,Emp_Admission_Date from employee where Emp_ID=?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 e.setId(rs.getInt(1));
                 e.setName(rs.getString(2));
-                e.setPassword(rs.getString(3));
-                e.setPuesto(rs.getString(4));
-                e.setFecha(rs.getString(5));
+                e.setLast_Name(rs.getString(3));
+                e.setPassword(rs.getString(4));
+                e.setPuesto(rs.getString(5));
+                e.setFecha(rs.getString(6));
                 
             }
             con.close();
@@ -199,15 +192,16 @@ public class CTL_CRUD {
 
         try {
             Connection con = CTL_CRUD.getConnection();
-            PreparedStatement ps = con.prepareStatement("select Emp_ID,Emp_Name,Emp_Password,Emp_Position,Emp_Admission_Date from employee");
+            PreparedStatement ps = con.prepareStatement("select Emp_ID,Emp_Name,Emp_LastName,Emp_Password,Emp_Position,Emp_Admission_Date from employee");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Informacion_del_Empleado e = new Informacion_del_Empleado();
                 e.setId(rs.getInt(1));
                 e.setName(rs.getString(2));
-                e.setPassword(rs.getString(3));
-                e.setPuesto(rs.getString(4));
-                e.setFecha(rs.getString(5));
+                e.setLast_Name(rs.getString(3));
+                e.setPassword(rs.getString(4));
+                e.setPuesto(rs.getString(5));
+                e.setFecha(rs.getString(6));
                 
                 list.add(e);
             }

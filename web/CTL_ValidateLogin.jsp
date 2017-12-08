@@ -36,13 +36,13 @@
                     if (rst.getString("Emp_ID").equals(ValidateLogin_LoginID) && rst.getString("Emp_Password").equals(ValidateLogin_LoginPass)) {
 
                         if (rst.getString("Emp_ID").equals(ValidateLogin_LoginID) && rst.getString("Emp_Position").equals("Empleado")) {
-                            response.sendRedirect("IU_PP_Empleado.jsp");
+                            response.sendRedirect("IU_PP_Empleado.jsp?sid=" + rst.getString("Emp_ID"));
                         } else if (rst.getString("Emp_ID").equals(ValidateLogin_LoginID) && rst.getString("Emp_Position").equals("RH")) {
-                            response.sendRedirect("IU_PP_RH.jsp");
+                            response.sendRedirect("IU_PP_RH.jsp?sid=" + rst.getString("Emp_ID"));
                         } else if (rst.getString("Emp_ID").equals(ValidateLogin_LoginID) && rst.getString("Emp_Position").equals("Supervisor")) {
-                            response.sendRedirect("IU_PP_SuperAndOM.jsp");
+                            response.sendRedirect("IU_PP_SuperAndOM.jsp?sid="+ rst.getString("Emp_ID"));
                         } else if (rst.getString("Emp_ID").equals(ValidateLogin_LoginID) && rst.getString("Emp_Position").equals("Gerente Operativo")) {
-                            response.sendRedirect("IU_PP_SuperAndOM.jsp");
+                            response.sendRedirect("IU_PP_SuperAndOM.jsp?sid=" + rst.getString("Emp_ID"));
                         } else if (rst.getString("Emp_ID").equals(ValidateLogin_LoginID) && (rst.getString("Emp_Position") != "RH" || rst.getString("Emp_Position") != "Empleado" || rst.getString("Emp_Position") != "Supervisor" || rst.getString("Emp_Position") != "Gerente Operativo")) {
                             response.sendRedirect("showerror.html");
                         }

@@ -1,6 +1,6 @@
 public class Informacion_del_Empleado {
 private int ID_E,age,totalExp,currentLvl;
-private String name,password,Puesto,Fecha_ingreso,gender,score,exp_total,bracket_emp,cumplimiento, anndate, tridate;
+private String name,password,Puesto,Fecha_ingreso,gender,score,exp_total,bracket_emp,cumplimiento, anndate, tridate,Last_Name;
 public int getId() {
 	return ID_E;
 }
@@ -18,6 +18,12 @@ public String getName() {
 }
 public void setName(String name) {
 	this.name = name;
+}
+public String getLast_Name() {
+	return Last_Name;
+}
+public void setLast_Name(String Last_Name) {
+	this.Last_Name = Last_Name;
 }
 public String getBracketName() {
 	return bracket_emp;

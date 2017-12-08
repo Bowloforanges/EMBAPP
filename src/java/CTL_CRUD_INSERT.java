@@ -46,6 +46,7 @@ public class CTL_CRUD_INSERT extends HttpServlet {
                PrintWriter out=response.getWriter();
                 int Id       = parseInt(request.getParameter("ID_E"));
 		String name     =request.getParameter("Nombre");
+                String lastname     =request.getParameter("Apellido");
 		String password =request.getParameter("password");
 		String puesto    =request.getParameter("Puesto");
 		String Fecha_ingreso  =request.getParameter("Fecha_ingreso");
@@ -53,6 +54,7 @@ public class CTL_CRUD_INSERT extends HttpServlet {
 		Informacion_del_Empleado e=new Informacion_del_Empleado();
                 e.setId(Id);
 		e.setName(name);
+                e.setLast_Name(lastname);
 		e.setPassword(password);
 		e.setPuesto(puesto);
 		e.setFecha(Fecha_ingreso);

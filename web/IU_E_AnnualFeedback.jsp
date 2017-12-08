@@ -37,12 +37,12 @@
             Connection con = null;
             ResultSet rs = null;
             Statement stmnt = null;
-            String sid = request.getParameter("ID_E");
+            String sid = request.getParameter("sid");
             int id = Integer.parseInt(sid);
 
             try {
 
-                String url = "jdbc:mysql://localhost:3306/embagroup";
+                String url = "jdbc:mysql://localhost:3306/test";
 
                 String user = "root";
                 String password = "1234";

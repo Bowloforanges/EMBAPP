@@ -26,7 +26,7 @@
     <body>
         <br>
         <div class="buttondiv">
-        <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/><br>
+            <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/><br>
         </div>
         <hr>
 
@@ -37,6 +37,8 @@
             Connection con = null;
             ResultSet rs = null;
             Statement stmnt = null;
+            String sid = request.getParameter("sid");
+            int id = Integer.parseInt(sid);
 
             try {
 
@@ -46,7 +48,7 @@
                 String password = "1234";
                 con = DriverManager.getConnection(url, user, password);
                 stmnt = con.createStatement();
-                rs = stmnt.executeQuery("SELECT * FROM embagroup.rev_trimestral; ");
+                rs = stmnt.executeQuery("SELECT * FROM test.tri_feed natural join test.feedback where Emp_ID = " + sid + ";");
                 //usr = stmt2.executeQuery("SELECT * FROM embagroup.info_empleado; ");
 
                 while (rs.next()) {

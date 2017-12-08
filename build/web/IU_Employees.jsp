@@ -47,6 +47,14 @@
             </div>
         </div>
         <div class="row">
+        <div class="col-25">
+                <label for="llast">Last Name</label>
+        </div>
+            <div class="col-75">
+                <input type="text" id="Apellido" name="Apellido" placeholder="Employee's Last Name">
+            </div>
+            </div>
+        <div class="row">
             <div class="col-25">
                 <label for="lpass">Password</label>
             </div>
@@ -60,9 +68,7 @@
             </div>
             <div class="col-75">
                 <select id="position" name="Position">
-                    <option>Director General</option>
                     <option>RH</option>
-                    <option>Jefe Administrativo</option>
                     <option>Gerente Operativo</option>
                     <option>Supervisor</option>
                     <option>Empleado</option>

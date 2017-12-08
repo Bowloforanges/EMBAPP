@@ -17,9 +17,16 @@
 
     </head>
     <body>
+
+
+        <%
+        String sid = request.getParameter("sid");
+        int id = Integer.parseInt(sid);
+        %>
+
         <div class="buttondiv">
-        <br>
-        <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/><br><br>
+            <br>
+            <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/><br><br>
         </div>
         <%    String DRIVER = "com.mysql.jdbc.Driver";
 
@@ -30,13 +37,13 @@
 
             try {
 
-                String url = "jdbc:mysql://localhost:3306/embagroup";
+                String url = "jdbc:mysql://localhost:3306/test";
 
                 String user = "root";
                 String password = "1234";
                 con = DriverManager.getConnection(url, user, password);
                 stmnt = con.createStatement();
-                rs = stmnt.executeQuery("SELECT * FROM embagroup.brackets; ");
+                rs = stmnt.executeQuery("select Bracket_ID, Bracket_Name, Bracket_Desc_Description ,Bracket_exp,Bracket_Emp_Status from brackets natural join bracket_desc natural join bracket_emp where Emp_ID = " + sid + " order by Bracket_ID asc;");
                 //usr = stmt2.executeQuery("SELECT * FROM embagroup.info_empleado; ");
 
                 while (rs.next()) {
@@ -45,14 +52,15 @@
         %>
 
 
+
         <div class="line-separator"></div>
         <div id="BOX" class="Bracket">
             <div id="content" >
-                <h1>Bracket ID: <%=rs.getInt("ID_Bracket")%></h1>
+                <h1>Bracket Name: <%=rs.getString(2)%>, Accomplished: <%=rs.getString(5)%></h1>
                 <div class="columns">
                     <ul>
-                        <li>Name: <%=rs.getString(2)%></li>
-                        <li>Experience: <%=rs.getInt("Exp")%></li>
+                        <li>Description: <%=rs.getString(3)%></li>
+                        <li>Experience per Bracket: <%=rs.getInt("Bracket_Exp")%></li>
                     </ul>         
                 </div>
             </div>
