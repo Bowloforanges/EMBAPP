@@ -31,11 +31,11 @@
                 <a href="IU_Calendar.jsp"><li>Calendar</li></a>
                 <a href="IU_VacationDays.jsp"><li>Vacation Days</li></a>
                 <a href="IU_Bracket_Menu.jsp"><li>Brackets</li></a>
-                <a href="IU_E_Score.jsp"><li>Score</li></a>
-                <a href="IU_E_AnnualFeedback.jsp"><li>Annual Feedback</li></a>
-                <a href="IU_E_TriFeedback.jsp"><li>Trimestral Feedback</li></a>
+                <a href="IU_Score_Employees"><li>Score</li></a>
+                <a href="IU_Feedback_Employees"><li>Feedback</li></a>
             </ul>
         </div>
+        <a href="IU_PP_SuperAndOM.jsp"></a>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
         <script  src="js/index.js"></script>

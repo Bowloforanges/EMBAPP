@@ -17,7 +17,7 @@
             <br>
             <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/>  
             <input type="button" value="View Employees" onclick="window.location.href = 'IU_Show_Employees_Super'" class="btn"/>
-            <input type="button" value="Edit Brackets" onclick="window.location.href = 'IU_Edit_Brackets.jsp'" class="btn"/><br><br>
+            <input type="button" value="Edit Brackets" onclick="window.location.href = 'IU_Bracket_Editor.jsp'" class="btn"/><br><br>
         </div>
        
         <%    String DRIVER = "com.mysql.jdbc.Driver";
@@ -35,7 +35,7 @@
                 String password = "1234";
                 con = DriverManager.getConnection(url, user, password);
                 stmnt = con.createStatement();
-                rs = stmnt.executeQuery("select * from test.brackets natural join test.bracket_desc where brackets.Bracket_Name = bracket_desc.Bracket_Name; ");
+                rs = stmnt.executeQuery("select * from test.brackets natural join test.bracket_desc where brackets.Bracket_Name = bracket_desc.Bracket_Name order by Bracket_ID asc;");
                 //usr = stmt2.executeQuery("SELECT * FROM embagroup.info_empleado; ");
 
                 while (rs.next()) {
@@ -47,7 +47,7 @@
         <div class="line-separator"></div>
         <div id="BOX" class="Bracket">
             <div id="content" >
-                <h1>Bracket Name: <%=rs.getString(1)%></h1>
+                <h1>Bracket Name: <%=rs.getString(1)%>, ID: <%=rs.getInt("Bracket_ID")%></h1>
                 <div class="columns">
                     <ul>
                         <li>Description: <%=rs.getString(4)%></li>

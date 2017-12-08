@@ -18,26 +18,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <script>
-            var currentID;
-
-            function showDescription(resultset rs) {
-
-                document.getElementById("brid").value = currentID;
-                document.getElementById('Description').innerHTML = rs.getString(4);
-
-            }
-
-
-        </script>    
+   
 
     </head>
     <body>
 
         <br>
         <div class="buttondiv">
-            <input type="button" value="Return" onclick="window.history.go(-1);
-                    return false;" class="btn"/><br>
+            <input type="button" value="Return" onclick="window.history.go(-1); return false;" class="btn"/><br>
         </div>
         <hr>
 
@@ -62,9 +50,6 @@
         %>
 
 
-
-
-
         <h1>Select a Bracket:</h1>
 
         <div class="container">
@@ -74,7 +59,7 @@
                         <label for="lbrid">Bracket ID</label>
                     </div>
                     <div class="col-75">
-                        <select id="brid" name="BR_id" onchange="showDescription(rs)">
+                        <select id="brid" name="BR_id">
                             <%  while (rs.next()) {
 
                             %>
@@ -126,10 +111,6 @@
         <hr>
 
         <br/>
-
-
-
-
 
     </body>
 </html>

@@ -8,6 +8,6 @@
  *
  * @author Soria
  */
-public class CTL_Uptadte_Acomplishment {
+public class CTL_Update_Acomplishment {
     
 }

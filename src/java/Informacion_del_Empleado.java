@@ -1,6 +1,6 @@
 public class Informacion_del_Empleado {
-private int ID_E,age;
-private String name,password,Puesto,Fecha_ingreso,gender,score,exp_total,bracket_emp,cumplimiento;
+private int ID_E,age,totalExp,currentLvl;
+private String name,password,Puesto,Fecha_ingreso,gender,score,exp_total,bracket_emp,cumplimiento, anndate, tridate;
 public int getId() {
 	return ID_E;
 }
@@ -68,5 +68,38 @@ public String getFecha() {
 public void setFecha(String Fecha_ingreso) {
 	this.Fecha_ingreso = Fecha_ingreso;
 }
+
+public String getAnnDate(){
+        return anndate;
+}
+
+public void setAnnDate(String anndate){
+        this.anndate = anndate;
+}
+
+public String getTriDate(){
+        return tridate;
+}
+
+public void setTriDate(String tridate){
+        this.tridate = tridate;
+}
+
+public int getTotalExp(){
+        return totalExp;
+}
+
+public void setTotalExp(int totalExp){
+        this.totalExp = totalExp;
+}
+
+public int getCurrentLvl(){
+        return currentLvl;
+}
+
+public void setCurrentLvl(int currentLvl){
+        this.currentLvl = currentLvl;
+}
+
 
 }

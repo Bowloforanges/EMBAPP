@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/IU_UPDATE_BRACKET")
-public class IU_UPDATE_BRACKET extends HttpServlet {
+@WebServlet("/IU_UPDATE_TRIMESTRALF")
+public class IU_UPDATE_TRIMESTRALF extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -45,25 +45,24 @@ public class IU_UPDATE_BRACKET extends HttpServlet {
                 + "    </div>\n"
                 + "    <hr>");
 
-        out.println("<h1>Update </h1>");
+        out.println("<h1>Trimestral Feedback: </h1>");
         String sid = request.getParameter("ID_E");
         int id = Integer.parseInt(sid);
 
-        List<Informacion_del_Empleado> list = CTL_CRUD.getBracketById(id);
+        List<Informacion_del_Empleado> list = CTL_CRUD.getTriFeedEmployeeById(id);
         
         out.println("<form action=\"CTL_Update_Acomplishment\" method=\"POST\">");
         out.println("<table>");
-        out.println("<center><caption>Brackets List</caption></center>\n"
-                + "  <thead>\n"
+        out.println("<thead>\n"
                 + "    <tr>\n"
-                + "      <th scope=\"col\" width=\"75%\">Name</th>\n"
-                + "      <th scope=\"col\" width=\"75%\">Acomplishment</th>\n"
+                + "      <th scope=\"col\" width=\"75%\">Feedback Date (YYYY-MM-DD)</th>\n"
+                + "      <th scope=\"col\" width=\"75%\">Comments</th>\n"
                 + "    </tr>\n"
                 + "  </thead>\n"
                 + "  <tbody>");
         for (Informacion_del_Empleado e : list) {
-            out.print("<tr><td width=\"75%\">" + e.getBracketName() + "</td>");
-            out.print("<td width=\"75%\"><input type=\"text\" placeholder=\"" + e.getCumplimiento() + "\"></td></tr></tbody>");
+            out.print("<tr><td width=\"75%\"><input type=\"text\" placeholder=\" " + e.getTriDate() + " \"></td>");
+            out.print("<td width=\"75%\"><input type=\"text\" placeholder=\" Comments \"></td></tr></tbody>");
         }
         out.print("</table>");
         out.println("  <hr><br>\n"
