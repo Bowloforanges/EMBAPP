@@ -49,7 +49,7 @@ public class IU_E_AnnualFeedback extends HttpServlet {
         String sid = request.getParameter("ID_E");
         int id = Integer.parseInt(sid);
 
-        List<Informacion_del_Empleado> list = CTL_CRUD.getAnnFeedEmployeeById(id);
+        Informacion_del_Empleado e = CTL_CRUD.getAnnFeedEmployeeById(id);
 
         out.println("        <div class=\"bs-example\">\n"
                 + "\n"
@@ -71,10 +71,7 @@ public class IU_E_AnnualFeedback extends HttpServlet {
                 + "    </tr>\n"
                 + "  </thead>\n"
                 + "  <tbody>");
-        for (Informacion_del_Empleado e : list) {
-            out.print("<tr><td width=\"75%\"><input type=\"text\" placeholder=\" " + e.getAnnDate() + " \"></td>");
-            out.print("<td width=\"75%\"><input type=\"text\" placeholder=\" Comments \"></td></tr></tbody>");
-        }
+
         out.print("</table>");
         out.println("  <hr><br>\n"
                 + "    <div class=\"buttondiv\">\n"

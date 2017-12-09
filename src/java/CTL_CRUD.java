@@ -68,7 +68,23 @@ public class CTL_CRUD {
 
         return status;
     }
+public static int updateTri(Informacion_del_Empleado e) {
+        int status = 0;
+        try {
+            
+            Connection con = CTL_CRUD.getConnection();
+            PreparedStatement ps = con.prepareStatement("update ann_feed set Ann_Feed_Date=? where Feedback_ID=?");
+            ps.setString(1, e.getAnnDate());
+            ps.setInt(2, e.getID_Rev());
 
+            status = ps.executeUpdate();
+
+            con.close();
+        } catch (SQLException ex) {
+        }
+
+        return status;
+    }
     public static int delete(int id) {
         int status = 0;
         try {
@@ -121,27 +137,27 @@ public class CTL_CRUD {
         return e;
     }
     
-    public static List<Informacion_del_Empleado> getAnnFeedEmployeeById(int id) {
-        List<Informacion_del_Empleado> list = new ArrayList<Informacion_del_Empleado>();
+
+    public static Informacion_del_Empleado getAnnFeedEmployeeById(int id) {
+        Informacion_del_Empleado e = new Informacion_del_Empleado();
 
         try {
             Connection con = CTL_CRUD.getConnection();
             PreparedStatement ps = con.prepareStatement("SELECT * FROM test.ann_feed natural join test.feedback where Emp_ID = ?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Informacion_del_Empleado e = new Informacion_del_Empleado();
+            if (rs.next()) {
+                e.setID_Rev(rs.getInt(1));
                 e.setAnnDate(rs.getString(2));
-                list.add(e);
+                
             }
             con.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-
-        return list;
+        return e;
     }
-    
+
     public static List<Informacion_del_Empleado> getTriFeedEmployeeById(int id) {
         List<Informacion_del_Empleado> list = new ArrayList<Informacion_del_Empleado>();
 
@@ -152,6 +168,7 @@ public class CTL_CRUD {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Informacion_del_Empleado e = new Informacion_del_Empleado();
+                e.setID_Rev(rs.getInt(1));
                 e.setTriDate(rs.getString(2));
                 list.add(e);
             }

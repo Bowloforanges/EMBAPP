@@ -63,6 +63,7 @@ public class IU_UPDATE_TRIMESTRALF extends HttpServlet {
         for (Informacion_del_Empleado e : list) {
             out.print("<tr><td width=\"75%\"><input type=\"text\" placeholder=\" " + e.getTriDate() + " \"></td>");
             out.print("<td width=\"75%\"><input type=\"text\" placeholder=\" Comments \"></td></tr></tbody>");
+            out.print("<tr><td width=\"75%\"><input type=\"hidden\" placeholder=\" " + e.getID_Rev() + " \"></td>");
         }
         out.print("</table>");
         out.println("  <hr><br>\n"

@@ -1,11 +1,17 @@
 public class Informacion_del_Empleado {
-private int ID_E,age,totalExp,currentLvl;
+private int ID_E,age,totalExp,currentLvl,ID_Rev;
 private String name,password,Puesto,Fecha_ingreso,gender,score,exp_total,bracket_emp,cumplimiento, anndate, tridate,Last_Name;
 public int getId() {
 	return ID_E;
 }
 public void setId(int ID_E) {
 	this.ID_E = ID_E;
+}
+public int getID_Rev() {
+	return ID_Rev;
+}
+public void setID_Rev(int ID_Rev) {
+	this.ID_Rev = ID_Rev;
 }
 public int getAge() {
 	return age;

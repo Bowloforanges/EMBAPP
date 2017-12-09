@@ -36,9 +36,9 @@
                 <a href="IU_NotificationScreen.jsp"><li>Notifications</li></a>
                 <a href="IU_Calendar.jsp"><li>Calendar</li></a>
                 <a href="IU_VacationDays.jsp"><li>Vacation Days</li></a>
-                <a href=<%= "\"IU_Bracket_Menu.jsp?sid=" + sid + "\""%>><li>Brackets</li></a>
-                <a href=<%= "\"IU_Score_Employees?sid=" + sid + "\""%>><li>Score</li></a>
-                <a href=<%= "\"IU_Feedback_Employees?sid=" + sid + "\""%>><li>Feedback</li></a>
+                <a href=<%= "\"IU_Bracket_Menu.jsp\""%>><li>Brackets</li></a>
+                <a href=<%= "\"IU_Score_Employees\""%>><li>Score</li></a>
+                <a href=<%= "\"IU_Feedback_Employees\""%>><li>Feedback</li></a>
             </ul>
         </div>
         <a href="IU_PP_SuperAndOM.jsp"></a>
