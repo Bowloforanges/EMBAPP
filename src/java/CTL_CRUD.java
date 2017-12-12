@@ -21,7 +21,7 @@ public class CTL_CRUD {
             Connection con = CTL_CRUD.getConnection();
 
             PreparedStatement ps = con.prepareStatement("insert into test.level_exp (Emp_Tot_Exp, Level_Exp_Current_Level) values (?,9)");
-            ps.setString(1, e.getExp());
+            ps.setInt(1, e.getExp());
             status = ps.executeUpdate();
             con.close();
         } catch (SQLException ex) {
@@ -68,7 +68,7 @@ public class CTL_CRUD {
 
         return status;
     }
-public static int updateTri(Informacion_del_Empleado e) {
+public static int updateAnn(Informacion_del_Empleado e) {
         int status = 0;
         try {
             
@@ -85,6 +85,42 @@ public static int updateTri(Informacion_del_Empleado e) {
 
         return status;
     }
+public static int updateTri(Informacion_del_Empleado e) {
+        int status = 0;
+        try {
+            
+            Connection con = CTL_CRUD.getConnection();
+            PreparedStatement ps = con.prepareStatement("update tri_feed set Tri_Feed_Date=? where Feedback_ID=?");
+            ps.setString(1, e.getTriDate());
+            ps.setInt(2, e.getID_Rev());
+
+            status = ps.executeUpdate();
+
+            con.close();
+        } catch (SQLException ex) {
+        }
+
+        return status;
+    }
+
+public static int updateScore(Informacion_del_Empleado e) {
+        int status = 0;
+        try {
+            
+            Connection con = CTL_CRUD.getConnection();
+            PreparedStatement ps = con.prepareStatement("update employee set Emp_Score=?,Emp_Tot_Exp=? where Emp_ID=?");
+            ps.setString(1, e.getScore());
+            ps.setInt(2, e.getTotalExp());
+               ps.setInt(3, e.getId());
+            status = ps.executeUpdate();
+
+            con.close();
+        } catch (SQLException ex) {
+        }
+
+        return status;
+    }
+
     public static int delete(int id) {
         int status = 0;
         try {
@@ -157,53 +193,46 @@ public static int updateTri(Informacion_del_Empleado e) {
         }
         return e;
     }
-
-    public static List<Informacion_del_Empleado> getTriFeedEmployeeById(int id) {
-        List<Informacion_del_Empleado> list = new ArrayList<Informacion_del_Empleado>();
+    public static Informacion_del_Empleado getTriFeedEmployeeById(int id) {
+        Informacion_del_Empleado e = new Informacion_del_Empleado();
 
         try {
             Connection con = CTL_CRUD.getConnection();
             PreparedStatement ps = con.prepareStatement("SELECT * FROM test.tri_feed natural join test.feedback where Emp_ID = ?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Informacion_del_Empleado e = new Informacion_del_Empleado();
+            if (rs.next()) {
                 e.setID_Rev(rs.getInt(1));
-                e.setTriDate(rs.getString(2));
-                list.add(e);
+                e.setAnnDate(rs.getString(2));
+                
             }
             con.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-
-        return list;
+        return e;
     }
     
-        public static List<Informacion_del_Empleado> getScoreById(int id) {
-        List<Informacion_del_Empleado> list = new ArrayList<Informacion_del_Empleado>();
+public static Informacion_del_Empleado getScoreById(int id) {
+        Informacion_del_Empleado e = new Informacion_del_Empleado();
 
         try {
             Connection con = CTL_CRUD.getConnection();
-            PreparedStatement ps = con.prepareStatement("select emp_tot_exp, level_exp_current_level, emp_id, emp_score from level_exp natural join employee where emp_id = ?");
+            PreparedStatement ps = con.prepareStatement("SELECT Emp_Score,Emp_Tot_Exp FROM test.employee where Emp_ID = ?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Informacion_del_Empleado e = new Informacion_del_Empleado();
-                e.setScore(rs.getString(4));
-                e.setTotalExp(rs.getInt(1));
-                e.setCurrentLvl(rs.getInt(2));
-                list.add(e);
+            if (rs.next()) {
+                e.setScore(rs.getString(1));
+                e.setExp(rs.getInt(2));
+                e.setId(id);
             }
             con.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-
-        return list;
+        return e;
     }
     
-
     public static List<Informacion_del_Empleado> getAllEmployees() {
         List<Informacion_del_Empleado> list = new ArrayList<Informacion_del_Empleado>();
 

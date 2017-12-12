@@ -49,30 +49,30 @@ public class IU_UPDATE_TRIMESTRALF extends HttpServlet {
         String sid = request.getParameter("ID_E");
         int id = Integer.parseInt(sid);
 
-        List<Informacion_del_Empleado> list = CTL_CRUD.getTriFeedEmployeeById(id);
+        Informacion_del_Empleado e = CTL_CRUD.getTriFeedEmployeeById(id);
         
-        out.println("<form action=\"CTL_Update_Acomplishment\" method=\"POST\">");
-        out.println("<table>");
-        out.println("<thead>\n"
-                + "    <tr>\n"
-                + "      <th scope=\"col\" width=\"75%\">Feedback Date (YYYY-MM-DD)</th>\n"
-                + "      <th scope=\"col\" width=\"75%\">Comments</th>\n"
-                + "    </tr>\n"
-                + "  </thead>\n"
-                + "  <tbody>");
-        for (Informacion_del_Empleado e : list) {
-            out.print("<tr><td width=\"75%\"><input type=\"text\" placeholder=\" " + e.getTriDate() + " \"></td>");
-            out.print("<td width=\"75%\"><input type=\"text\" placeholder=\" Comments \"></td></tr></tbody>");
-            out.print("<tr><td width=\"75%\"><input type=\"hidden\" placeholder=\" " + e.getID_Rev() + " \"></td>");
-        }
-        out.print("</table>");
-        out.println("  <hr><br>\n"
+        out.println("<form action=\"CTL_UPDATE_TRIMESTRALF\" method=\"get\">");
+ 
+        out.println("        <div class=\"separatepls\"><div class=\"row\">\n"
+                + "            <div class=\"col-25\">\n"
+                + "                <label for=\"lname\">Date</label>\n"
+                + "            </div>\n"
+                + "            <div class=\"col-75\">\n"
+                + "                <input type=\"date\" id=\"lname\" name=\"Fecha_Rev\" value='" + e.getAnnDate()+ "' placeholder=\"Employee's Name\">\n"
+                + "            </div>\n"
+                + "        </div>\n"
+                + "        <div class=\"row\">\n"
+                + "            <div class=\"col-25\">\n"
+                + "                <label for=\"lID\"></label>\n"
+                + "            </div>\n"
+                + "            <div class=\"col-75\">\n"
+                + "                <input type=\"hidden\" id=\"fname\" name=\"ID_Rev\" value='" + e.getID_Rev()+ "' placeholder=\"Employee's ID\">\n"
+                + "            </div>\n"
+                + "        </div></div>\n"
+                + "  <hr><br>\n"
                 + "    <div class=\"buttondiv\">\n"
-                + "        <input type=\"submit\" value=\"Save Changes\" onclick=\"window.location.href='/CTL_Uptadte_Acomplishment'\" class=\"btn\"/><br>\n"
+                + "        <input type=\"submit\" value=\"Save Changes\" class=\"btn\"/><br>\n"
                 + "    </div>\n");
-        
-        out.println("</form>");
-
         out.close();
     }
 

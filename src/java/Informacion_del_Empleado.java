@@ -55,11 +55,11 @@ public String getScore() {
 public void setScore(String score) {
 	this.score = score;
 }
-public String getExp() {
-	return exp_total;
+public int getExp() {
+	return totalExp;
 }
-public void setExp(String exp_total) {
-	this.exp_total = exp_total;
+public void setExp(int totalExp) {
+	this.totalExp = totalExp;
 }
 
 public String getPassword() {

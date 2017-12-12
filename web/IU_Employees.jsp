@@ -35,7 +35,7 @@
                 <label for="lID">ID</label>
             </div>
             <div class="col-75">
-                <input type="text" id="ide" name="ID_E" placeholder="Employee's ID">
+                <input type="text" id="ide" name="ID_E" placeholder="Employee's ID" required maxlength="6" type="number">
             </div>
         </div>
         <div class="row">
@@ -43,7 +43,7 @@
                 <label for="lname">Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="name" name="Nombre" placeholder="Employee's Name">
+                <input type="text" id="name" name="Nombre" placeholder="Employee's Name" required maxlength="45">
             </div>
         </div>
         <div class="row">
@@ -51,7 +51,7 @@
                 <label for="llast">Last Name</label>
         </div>
             <div class="col-75">
-                <input type="text" id="Apellido" name="Apellido" placeholder="Employee's Last Name">
+                <input type="text" id="Apellido" name="Apellido" placeholder="Employee's Last Name" required maxlength="45">
             </div>
             </div>
         <div class="row">
@@ -59,7 +59,7 @@
                 <label for="lpass">Password</label>
             </div>
             <div class="col-75">
-                <input type="text" id="pass" name="Password" placeholder="Employee's Password">
+                <input type="text" id="pass" name="Password" placeholder="Employee's Password" required maxlength="45">
             </div>
         </div>
         <div class="row">
@@ -80,7 +80,7 @@
                 <label for="lage">Age</label>
             </div>
             <div class="col-75">
-                <input type="text" id="age" name="Age" placeholder="Employee's Age">
+                <input type="text" id="age" name="Age" placeholder="Employee's Age" required maxlength="2" type="number">
             </div>
         </div>
         <div class="row">

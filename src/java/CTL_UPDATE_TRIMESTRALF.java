@@ -5,8 +5,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/CTL_UPDATE_ANNUALF")
-public class CTL_UPDATE_ANNUALF extends HttpServlet {
+@WebServlet("/CTL_UPDATE_TRIMESTRALF")
+public class CTL_UPDATE_TRIMESTRALF extends HttpServlet {
 
 
 
@@ -33,9 +33,9 @@ public class CTL_UPDATE_ANNUALF extends HttpServlet {
 		
 		Informacion_del_Empleado e=new Informacion_del_Empleado();
 		e.setID_Rev(id);
-		e.setAnnDate(Fecha);
+		e.setTriDate(Fecha);
 		
-		int status=CTL_CRUD.updateAnn(e);
+		int status=CTL_CRUD.updateTri(e);
 		if(status>0){
 			 response.sendRedirect("IU_Feedback_Employees");
                         

@@ -49,33 +49,41 @@ public class IU_UPDATE_SCORE extends HttpServlet {
         String sid = request.getParameter("ID_E");
         int id = Integer.parseInt(sid);
 
-        List<Informacion_del_Empleado> list = CTL_CRUD.getScoreById(id);
+        Informacion_del_Empleado e = CTL_CRUD.getScoreById(id);
         
-        out.println("<form action=\"CTL_Update_Acomplishment\" method=\"POST\">");
-        out.println("<table>");
-        out.println("<thead>\n"
-                + "    <tr>\n"
-                + "      <th scope=\"col\" width=\"33%\">Set Score</th>\n"
-                + "      <th scope=\"col\" width=\"33%\">Set Level Progression (%)</th>\n"
-                + "      <th scope=\"col\" width=\"33%\">Set Experience</th>\n"
-                + "    </tr>\n"
-                + "  </thead>\n"
-                + "  <tbody>");
-        for (Informacion_del_Empleado e : list) {
-            out.print("<tr><td width=\"33%\"><input type=\"text\" placeholder=\" " + e.getScore() + " \"></td>");
-            out.print("<td width=\"33%\"><input type=\"text\" placeholder=\" " + e.getCurrentLvl() + " \"></td>");
-            out.print("<td width=\"33%\"><input type=\"text\" placeholder=\" " + e.getTotalExp() + " \"></td></tbody>");
-        }
-        out.print("</table>");
-        out.println("  <hr><br>\n"
+        out.println("<form action=\"CTL_UPDATE_SCORE\" method=\"get\">");
+ 
+        out.println("        <div class=\"separatepls\"><div class=\"row\">\n"
+                + "            <div class=\"col-25\">\n"
+                + "                <label for=\"lname\">Score</label>\n"
+                + "            </div>\n"
+                + "            <div class=\"col-75\">\n"
+                + "                <input type=\"text\" id=\"lname\" name=\"score\" placeholder='"+ e.getScore()+"'\" required >\n"
+                + "            </div>\n"
+                + "        </div>\n"
+                + "        <div class=\"row\">\n"
+                + "            <div class=\"col-25\">\n"
+                + "                <label for=\"lID\">Exp</label>\n"
+                + "            </div>\n"
+                + "            <div class=\"col-75\">\n"
+                + "                <input type=\"text\" id=\"fname\" name=\"EXP\" placeholder='"+ e.getExp()+"'\" required type=\"number\">\n"
+                + "            </div>\n"
+                + "        </div></div>\n"
+                + "        <div class=\"row\">\n"
+                + "            <div class=\"col-25\">\n"
+                + "                <label for=\"lID\"></label>\n"
+                + "            </div>\n"
+                + "            <div class=\"col-75\">\n"
+                + "                <input type=\"hidden\" id=\"fame\" name=\"ID_Emp\" value='"+ e.getId()+"'\">\n"
+                + "            </div>\n"
+                + "        </div></div>\n"
+                + "  <hr><br>\n"
                 + "    <div class=\"buttondiv\">\n"
-                + "        <input type=\"submit\" value=\"Save Changes\" onclick=\"window.location.href='/CTL_Uptadte_Acomplishment'\" class=\"btn\"/><br>\n"
+                + "        <input type=\"submit\" value=\"Save Changes\" class=\"btn\"/><br>\n"
                 + "    </div>\n");
-        
-        out.println("</form>");
-
         out.close();
     }
+
 
     /**
      * Handles the HTTP <code>POST</code> method.

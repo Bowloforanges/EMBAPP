@@ -83,7 +83,7 @@
                         <label for="lnname">New Name</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="name" name="Nombre" placeholder="Bracket Name">
+                        <input type="text" id="name" name="Nombre" placeholder="Bracket Name" required maxlength="45">
                     </div>
                 </div>
                 <div class="row">
@@ -91,7 +91,7 @@
                         <label for="lname">New Description</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="name" name="Nombre" placeholder="Description">
+                        <input type="text" id="name" name="Descripcion" placeholder="Description" required maxlength="255">
                     </div>
                 </div>
                 <div class="row">
@@ -99,7 +99,7 @@
                         <label for="lname">Experience</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="name" name="Nombre" placeholder="Experience">
+                        <input type="text" id="name" name="Experiencia" placeholder="Experience" required maxlength="4" type="number">
                     </div>
                 </div>
                 <div class="row"class='buttondiv'>

@@ -3,23 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_E_AnnualFeedback.jsp</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/IU_UPDATE_BRACKET.java</file>
+            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/IU_UPDATE_SCORE.java</file>
             <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/IU_UPDATE_ANNUALF.java</file>
             <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_Bracket_Editor.jsp</file>
             <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/Informacion_del_Empleado.java</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/IU_CRUD_UPDATE.java</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_E_TriFeedback.jsp</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_Employees.jsp</file>
+            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_Login.jsp</file>
             <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/CTL_UPDATE_ANNUALF.java</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_Bracket_Menu.jsp</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/CTL_CRUD_UPDATE.java</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_E_Score.jsp</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/IU_E_AnnualFeedback.java</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/IU_UPDATE_TRIMESTRALF.java</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_PP_SuperAndOM.jsp</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_E_Brackets.jsp</file>
-            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/web/IU_Calendar.jsp</file>
+            <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/CTL_UPDATE_SCORE.java</file>
             <file>file:/C:/Users/Soria/Documents/GitHub/EMBAPP/src/java/CTL_CRUD.java</file>
         </group>
     </open-files>
